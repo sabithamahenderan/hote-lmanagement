@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    h2{
+      margin-left: 10px;
+      color: white;
+      font-size: 40px;
+      margin-top: 0;
+      margin-bottom: 5px;
+     
+    }
+  
+    .img1{
+      height: 200px;
+      width: 200px;
+    }
+    .images{
+      display: grid;
+      grid-template-columns: 250px 250px 250px 250px ;
+      display: inline-block;
+      margin-top: 10px;
+      
+    }
+    .first{
+      border: 1px solid gray;
+      margin-left: 100px;
+      display: inline-block;
+      box-shadow: 3px 3px 3px 3px white;
+      
+    }
+    
+      body{
+      background-image: linear-gradient(to bottom left, #ecb143,rgb(219, 144, 219),rgb(120, 120, 240),rgb(106, 224, 224));
+      background-repeat: no-repeat;
+      height: 800px;
+     }
+    a{
+      text-decoration: none;
+      color: black;
+      }
+        .one{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDMUKkrg9Ru5V9SftMpFLmnMwJSw4RnE5gg);
+          opacity: 0.5;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 350px;
+
+          
+        }
+        .container{
+         border-radius: 20px;
+         overflow: hidden;
+         cursor: pointer; 
+        }
+        .container img{
+          height: 200px;
+          width: 200px;
+          filter: grayscale(.4);
+          transition: .1s;
+
+        }
+        .container img:hover{
+          filter: grayscale(0);
+          transition: scale(1.3) rotate(7deg);
+        }        
+        button{
+          color: white;
+          background: transparent;
+          border-radius: 15px;
+          margin-left: 50px;
+        }
+      
+      </style>
+</head>
+<body>
+  <div class="one">
+  <h2>Are you hungry?<br>can't wait!!!<br>lets start to order food now!</h2>
+   <div class="two"><button style="width: 100px; height: 50px; border:white;  border: 1px solid white;margin-top: 90px;">order now</button></div>
+   </div>
+   
+   <div class="container">
+  <div class="images">
+    <div class="first">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYDMUKkrg9Ru5V9SftMpFLmnMwJSw4RnE5gg&s" class="img1" alt="hover">
+      <p style="font-size:small; display: flex; align-items: center;  justify-content: center;color: white;">VEG</p>
+      <p style="font-size:15px; display: flex; align-items: center;  justify-content: center;"><a href="veg.html" style="color: blue;">see more</a></p>
+    </div>
+    <div class="first">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2B-2vo5phjQ5C77Y_CAXyKLB2upNl5ssxDw&s" class="img1">
+      <p style="font-size:small; display: flex; align-items: center;  justify-content: center;color: white;">NON VEG</p>
+      <p style="font-size:15px; display: flex; align-items: center;  justify-content: center;"><a href="nonveg.html" style="color: blue;">see more</a></p>
+    </div>
+    <div class="first">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvyMR8ZqTYTGZMEVOCH65aNepuw9MG_DfqiA&s" class="img1">
+      <p style="font-size:small; display: flex; align-items: center;  justify-content: center;color: white;">ICE CREAMS</p>
+      <p style="font-size:15px; display: flex; align-items: center;  justify-content: center;"><a href="icecream.html" style="color: blue;">see more</a></p>
+    </div>
+    <div class="first">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFhlF2VpLbH3OleN3uOhd3mVC7O6dkxzh0jA&s" class="img1">
+      <p style="font-size:small; display: flex; align-items: center;  justify-content: center;color: white;">JUICE</p>
+      <p style="font-size:15px; display: flex; align-items: center;  justify-content: center;"><a href="juice.html" style="color: blue;">see more</a></p>
+    </div>
+  </div>
+   </div>
+</body>
+</html>

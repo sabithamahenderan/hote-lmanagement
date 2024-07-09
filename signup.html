@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration and Login</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script> 
+    <style>
+        body{
+          background-image: linear-gradient(to top right,blue,pink,violet,green);
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 700px;
+        }
+       
+    
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid d-flex justify-content-center"> 
+        <form name="registerform" action="log.html" onsubmit="return validate() " style="width: 400px; border: 1px solid black;border-radius: 10px; background-color: rgba(0, 0, 0, 0.1);" class="m-5 p-5 was-validate">
+            <div class="">
+                <label for="username" class="form-label">username</label>
+                <input type="username" id="username" name="username" class="form-control" style="background-color:rgb(0, 0, 0, 0.2)">
+            </div>
+            <div>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" style="background-color:rgb(0, 0, 0, 0.2) ">
+            </div>
+            <div>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" style="background-color:rgb(0, 0, 0, 0.2) ">
+            </div>
+            <div>
+                <label for="confirmpassword" class="form-label">Confirm Password</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" class="form-control" style="background-color:rgb(0, 0, 0, 0.2) ">
+            </div>
+            <div class="d-flex justify-content-center mt-3 pt-5">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+<script>
+   
+
+  function validate() {
+    var name = document.forms["registerForm"]["userName"].value;
+    var email = document.forms["registerForm"]["email"].value;
+    var password = document.forms["registerForm"]["password"].value;
+    var confirmPassword = document.forms["registerForm"]["confrimPassword"].value;
+    //if
+    if((name||email||password)==""){
+        alert(" fields cannot be empty")
+        return false;
+       }
+
+    // Basic validation checks
+    if (password != confirmPassword) {
+        alert("Passwords do not match!");
+        return false;
+    }
+
+    var users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Check for duplicate email
+    var duplicate = false;
+    users.forEach(function(user) {
+        if (user.email === email) {
+            duplicate = true;
+        }
+    });
+
+    if (duplicate) {
+        alert("Email already registered!");
+        return false;
+    }
+
+    var user = {
+        userName: name,
+        email: email,
+        password: password
+    };
+
+    users.push(user);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert("Registration successful!");
+    return true;
+}
+
+</script>
+
+</body> 
+</html>                            
+
+
+
+       
